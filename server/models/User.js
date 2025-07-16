@@ -16,8 +16,21 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6
-  }
+    minlength: 8
+  },
+  tier: {
+    type: String,
+    required: true,
+    default: 'Free',
+    enum: ['Free', 'Basic', 'Pro', 'Ballin']
+  },
+  currency: {
+    type: String,
+    required: true,
+    default: 'USD',
+    enum: ['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'INR', 'JPY']
+  },
+
 }, {
   timestamps: true
 });
