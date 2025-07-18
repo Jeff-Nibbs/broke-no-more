@@ -1,16 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-// server/routes/transactions.js
+
 //GET /api/transactions (get user's transactions)
+router.get('/', async (req, res) => {});
+
+//GET /api/transactions (get single transaction)
+router.get('/:id', async (req, res) => {});
+
 //POST /api/transactions (create transaction)
+router.post('/', async (req, res) => {});
+
 //PUT /api/transactions/:id (update transaction)
+router.put('/:id', async (req, res) => {});
+
 //DELETE /api/transactions/:id (delete transaction)
-//GET /api/transactions/stats (get spending statistics)
+router.delete('/:id', async (req, res) => {});
 
-
-router.get('/', async (req, res) => {
-  res.json({ test: 'you did it' });
-});
 
 module.exports = router;
