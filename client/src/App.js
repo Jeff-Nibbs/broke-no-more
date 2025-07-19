@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+// API service using axios
+const api = axios.create({
+  baseURL: 'http://localhost:5000/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 function App() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
@@ -9,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/poop');
+        const response = await api.get('/poop');
         setMessage(response.data.test);
       } catch (error) {
         console.error('Error fetching data:', error);

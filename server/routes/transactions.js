@@ -3,7 +3,9 @@ const router = express.Router();
 
 
 //GET /api/transactions (get user's transactions)
-router.get('/', async (req, res) => {});
+router.get('/', async (req, res) => { 
+  res.json({ test: 'Hey why does this work' });
+});
 
 //GET /api/transactions (get single transaction)
 router.get('/:id', async (req, res) => {});
