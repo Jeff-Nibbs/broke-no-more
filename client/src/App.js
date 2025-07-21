@@ -18,8 +18,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get('/poop');
-        setMessage(response.data.test);
+        const response = await api.get('/transaction');
+        setMessage(response.data[0].amount);
       } catch (error) {
         console.error('Error fetching data:', error);
         setMessage('Error connecting to backend');
@@ -34,12 +34,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MERN Stack App</h1>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <p>{message}</p>
-        )}
+         <div>
+      <h2>Transactions</h2>
+      <ul>
+      {message}
+      </ul>
+    </div>
       </header>
     </div>
   );

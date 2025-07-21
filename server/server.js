@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const test = require('./routes/transactions.js');
+const transaction = require('./routes/transactions.js');
 
 
 // Middleware
@@ -31,7 +31,7 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Backend connected poop!' });
 });
 
-app.use('/api/poop', test);
+app.use('/api/transaction', transaction);
 
 // Start server
 app.listen(PORT, () => {
