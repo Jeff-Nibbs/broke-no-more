@@ -6,7 +6,8 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const transaction = require('./routes/transactions.js');
-
+const category = require('./routes/categories.js');
+const user = require('./routes/user.js');
 
 // Middleware
 app.use(cors());
@@ -32,6 +33,8 @@ app.get('/api/test', (req, res) => {
 });
 
 app.use('/api/transaction', transaction);
+app.use('/api/category', category);
+app.use('/api/user', user);
 
 // Start server
 app.listen(PORT, () => {
